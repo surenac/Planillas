@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="SistemaPlanillas.Formularios.PaginaMaestra" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />    
+    <style>
+        .carousel-inner .item img {
+            width: auto;
+            margin: auto;
+            height:auto;
+            max-height:300px;
+        }       
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title></title>
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet"/>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+
+        <header>
+
+        <div class="jumbotron text-center">
+            <h1>Soluciones Informaticas</h1>
+            <h2>SJDL</h2>
+        </div>
+
+        <div>
+            <h3>Opciones de Menú</h3>
+        </div>
+
+        <div>
+            <asp:HyperLink ID="hpListaUsuario" runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx">Listado de Usuarios</asp:HyperLink>
+            <asp:HyperLink ID="hpUsuarioInserta" runat="server" NavigateUrl="~/Formularios/frmUsuarioInserta.aspx">Creacion de Usuarios</asp:HyperLink>
+            <asp:HyperLink ID="hpColaboradorLista" runat="server" NavigateUrl="~/Formularios/frmColaboradorLista.aspx">Lista de Colaboradores</asp:HyperLink>
+            <asp:HyperLink ID="hpColaboradorInserta" runat="server" NavigateUrl="~/Formularios/frmColaboradorInserta.aspx">Creacion de Colaboradores</asp:HyperLink>
+            <asp:HyperLink ID="hpCalculoSalarios" runat="server" NavigateUrl="~/Formularios/frmCalculoSalarios.aspx">Calculos de Salarios</asp:HyperLink>
+            <asp:HyperLink ID="hpReporte" runat="server" NavigateUrl="~/Formularios/Reporte.aspx">Reporte</asp:HyperLink>
+            <asp:HyperLink ID="hpfSalir" runat="server" NavigateUrl="~/Formularios/frmLogginSalir.aspx">Salir</asp:HyperLink>
+        </div>
+
+    </header>
+
+    <%--Content Place Holder para que las paginas que utilicen la plantilla incluyan sus formularios--%>
+    <asp:ContentPlaceHolder ID="ContenidoPrincipal" runat="server">
+
+    </asp:ContentPlaceHolder>
+      
+    <%--Definicion de scrips para todas las paginas--%>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+        
+    <%--Content Place Holder para que las paginas que utilicen la plantilla incluyan scrips propios--%>
+    <asp:ContentPlaceHolder ID="scriptsPersonalizados" runat="server"></asp:ContentPlaceHolder>
+    <footer>Todos los derechos reservados <%: DateTime.Now.Year %> </footer>
+
+</body>
+
+</html>

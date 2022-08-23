@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PlanillasModelStoreContainer" CdmEntityContainer="PlanillasEntities">
+    <FunctionImportMapping FunctionImportName="RetornaSalarios" FunctionName="PlanillasModel.Store.RetornaSalarios" />
+    <FunctionImportMapping FunctionImportName="RetornaTurno" FunctionName="PlanillasModel.Store.RetornaTurno">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.RetornaTurno_Result">
+          <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+          <ScalarProperty Name="nombreTurno" ColumnName="nombreTurno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="PlanillasModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_CalculaInserta" FunctionName="PlanillasModel.Store.sp_CalculaInserta" />
+    <FunctionImportMapping FunctionImportName="sp_CalculaModifica" FunctionName="PlanillasModel.Store.sp_CalculaModifica" />
+    <FunctionImportMapping FunctionImportName="sp_CalculaReserva" FunctionName="PlanillasModel.Store.sp_CalculaReserva" />
+    <FunctionImportMapping FunctionImportName="sp_ColaboradorElimina" FunctionName="PlanillasModel.Store.sp_ColaboradorElimina" />
+    <FunctionImportMapping FunctionImportName="sp_ColaboradorInserta" FunctionName="PlanillasModel.Store.sp_ColaboradorInserta" />
+    <FunctionImportMapping FunctionImportName="sp_ColaboradorModifica" FunctionName="PlanillasModel.Store.sp_ColaboradorModifica" />
+    <FunctionImportMapping FunctionImportName="sp_ColaboradorRetorna" FunctionName="PlanillasModel.Store.sp_ColaboradorRetorna">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_ColaboradorRetorna_Result">
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="direccionFisica" ColumnName="direccionFisica" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          <ScalarProperty Name="salarioBase" ColumnName="salarioBase" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ColaboradorRetornaID" FunctionName="PlanillasModel.Store.sp_ColaboradorRetornaID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_ColaboradorRetornaID_Result">
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="direccionFisica" ColumnName="direccionFisica" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          <ScalarProperty Name="salarioBase" ColumnName="salarioBase" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="PlanillasModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="PlanillasModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="PlanillasModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="PlanillasModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="PlanillasModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_RetornaEmpleado" FunctionName="PlanillasModel.Store.sp_RetornaEmpleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_RetornaEmpleado_Result">
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="salarioBase" ColumnName="salarioBase" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaEmpleadoSalario" FunctionName="PlanillasModel.Store.sp_RetornaEmpleadoSalario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_RetornaEmpleadoSalario_Result">
+          <ScalarProperty Name="idRegistro" ColumnName="idRegistro" />
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="salarioBase" ColumnName="salarioBase" />
+          <ScalarProperty Name="diasLaborados" ColumnName="diasLaborados" />
+          <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+          <ScalarProperty Name="nombreTurno" ColumnName="nombreTurno" />
+          <ScalarProperty Name="horasExtras" ColumnName="horasExtras" />
+          <ScalarProperty Name="SeguroSocial" ColumnName="SeguroSocial" />
+          <ScalarProperty Name="impuestoRenta" ColumnName="impuestoRenta" />
+          <ScalarProperty Name="Asociacion" ColumnName="Asociacion" />
+          <ScalarProperty Name="otrosRebajos" ColumnName="otrosRebajos" />
+          <ScalarProperty Name="totalPago" ColumnName="totalPago" />
+          <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+          <ScalarProperty Name="Aguinaldo" ColumnName="Aguinaldo" />
+          <ScalarProperty Name="Vacaciones" ColumnName="Vacaciones" />
+          <ScalarProperty Name="Cesantia" ColumnName="Cesantia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaEmpleadoSalarioID" FunctionName="PlanillasModel.Store.sp_RetornaEmpleadoSalarioID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_RetornaEmpleadoSalarioID_Result">
+          <ScalarProperty Name="idRegistro" ColumnName="idRegistro" />
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="salarioBase" ColumnName="salarioBase" />
+          <ScalarProperty Name="diasLaborados" ColumnName="diasLaborados" />
+          <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+          <ScalarProperty Name="nombreTurno" ColumnName="nombreTurno" />
+          <ScalarProperty Name="horasExtras" ColumnName="horasExtras" />
+          <ScalarProperty Name="SeguroSocial" ColumnName="SeguroSocial" />
+          <ScalarProperty Name="impuestoRenta" ColumnName="impuestoRenta" />
+          <ScalarProperty Name="Asociacion" ColumnName="Asociacion" />
+          <ScalarProperty Name="otrosRebajos" ColumnName="otrosRebajos" />
+          <ScalarProperty Name="totalPago" ColumnName="totalPago" />
+          <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+          <ScalarProperty Name="Aguinaldo" ColumnName="Aguinaldo" />
+          <ScalarProperty Name="Vacaciones" ColumnName="Vacaciones" />
+          <ScalarProperty Name="Cesantia" ColumnName="Cesantia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_retornaSalario" FunctionName="PlanillasModel.Store.sp_retornaSalario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_retornaSalario_Result">
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="salarioBase" ColumnName="salarioBase" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioCorreoPwd" FunctionName="PlanillasModel.Store.sp_RetornaUsuarioCorreoPwd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_RetornaUsuarioCorreoPwd_Result">
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="PlanillasModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_UsuarioElimina" FunctionName="PlanillasModel.Store.sp_UsuarioElimina" />
+    <FunctionImportMapping FunctionImportName="sp_UsuarioInserta" FunctionName="PlanillasModel.Store.sp_UsuarioInserta" />
+    <FunctionImportMapping FunctionImportName="sp_UsuarioModifica" FunctionName="PlanillasModel.Store.sp_UsuarioModifica" />
+    <FunctionImportMapping FunctionImportName="sp_UsuarioRetorna" FunctionName="PlanillasModel.Store.sp_UsuarioRetorna">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_UsuarioRetorna_Result">
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UsuarioRetornaID" FunctionName="PlanillasModel.Store.sp_UsuarioRetornaID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PlanillasModel.sp_UsuarioRetornaID_Result">
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

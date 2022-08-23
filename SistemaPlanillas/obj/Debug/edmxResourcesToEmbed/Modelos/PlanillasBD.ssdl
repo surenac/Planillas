@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlanillasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="RetornaSalarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RetornaTurno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombreTurno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_CalculaInserta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idColaborador" Type="int" Mode="In" />
+    <Parameter Name="diasLaborados" Type="int" Mode="In" />
+    <Parameter Name="idTurno" Type="int" Mode="In" />
+    <Parameter Name="horasExtras" Type="decimal" Mode="In" />
+    <Parameter Name="SeguroSocial" Type="decimal" Mode="In" />
+    <Parameter Name="impuestoRenta" Type="decimal" Mode="In" />
+    <Parameter Name="Asociacion" Type="decimal" Mode="In" />
+    <Parameter Name="otrosRebajos" Type="int" Mode="In" />
+    <Parameter Name="totalPago" Type="decimal" Mode="In" />
+    <Parameter Name="Vacaciones" Type="decimal" Mode="In" />
+    <Parameter Name="Aguinaldo" Type="decimal" Mode="In" />
+    <Parameter Name="Cesantia" Type="decimal" Mode="In" />
+    <Parameter Name="fechaPago" Type="date" Mode="In" />
+  </Function>
+  <Function Name="sp_CalculaModifica" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idRegistro" Type="int" Mode="In" />
+    <Parameter Name="idColaborador" Type="int" Mode="In" />
+    <Parameter Name="diasLaborados" Type="int" Mode="In" />
+    <Parameter Name="idTurno" Type="int" Mode="In" />
+    <Parameter Name="horasExtras" Type="decimal" Mode="In" />
+    <Parameter Name="SeguroSocial" Type="decimal" Mode="In" />
+    <Parameter Name="impuestoRenta" Type="decimal" Mode="In" />
+    <Parameter Name="Asociacion" Type="decimal" Mode="In" />
+    <Parameter Name="otrosRebajos" Type="int" Mode="In" />
+    <Parameter Name="totalPago" Type="decimal" Mode="In" />
+    <Parameter Name="Vacaciones" Type="decimal" Mode="In" />
+    <Parameter Name="Aguinaldo" Type="decimal" Mode="In" />
+    <Parameter Name="Cesantia" Type="decimal" Mode="In" />
+    <Parameter Name="fechaPago" Type="date" Mode="In" />
+  </Function>
+  <Function Name="sp_CalculaReserva" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idColaborador" Type="int" Mode="In" />
+    <Parameter Name="Vacaciones" Type="decimal" Mode="In" />
+    <Parameter Name="Aguinaldo" Type="decimal" Mode="In" />
+    <Parameter Name="Cesantia" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="sp_ColaboradorElimina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idColaborador" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_ColaboradorInserta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cedula" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Primer_Apellido" Type="varchar" Mode="In" />
+    <Parameter Name="Segundo_Apellido" Type="varchar" Mode="In" />
+    <Parameter Name="Genero" Type="varchar" Mode="In" />
+    <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="direccionFisica" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="decimal" Mode="In" />
+    <Parameter Name="FechaIngreso" Type="date" Mode="In" />
+    <Parameter Name="SalarioBase" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="sp_ColaboradorModifica" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idColaborador" Type="int" Mode="In" />
+    <Parameter Name="cedula" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Primer_Apellido" Type="varchar" Mode="In" />
+    <Parameter Name="Segundo_Apellido" Type="varchar" Mode="In" />
+    <Parameter Name="Genero" Type="varchar" Mode="In" />
+    <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="direccionFisica" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="decimal" Mode="In" />
+    <Parameter Name="FechaIngreso" Type="date" Mode="In" />
+    <Parameter Name="SalarioBase" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="sp_ColaboradorRetorna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="primerApellido" Type="varchar" Mode="In" />
+    <Parameter Name="segundoApellido" Type="varchar" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ColaboradorRetornaID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idColaborador" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RetornaEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_RetornaEmpleadoSalario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="primerApellido" Type="varchar" Mode="In" />
+    <Parameter Name="segundoApellido" Type="varchar" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="fechaPago" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RetornaEmpleadoSalarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idRegistro" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_retornaSalario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idColaborador" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_RetornaUsuarioCorreoPwd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="correoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="contrasena" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_UsuarioElimina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_Usuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UsuarioInserta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
+    <Parameter Name="correoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="contrasena" Type="varchar" Mode="In" />
+    <Parameter Name="tipoUsuario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UsuarioModifica" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_Usuario" Type="int" Mode="In" />
+    <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
+    <Parameter Name="correoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="tipoUsuario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UsuarioRetorna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_UsuarioRetornaID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_Usuario" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="PlanillasModelStoreContainer" />
+</Schema>

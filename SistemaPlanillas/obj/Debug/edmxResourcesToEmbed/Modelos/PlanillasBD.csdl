@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlanillasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PlanillasEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="RetornaSalarios" ReturnType="Collection(Decimal)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RetornaTurno" ReturnType="Collection(PlanillasModel.RetornaTurno_Result)">
+      <Parameter Name="nombreTurno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CalculaInserta">
+      <Parameter Name="idColaborador" Mode="In" Type="Int32" />
+      <Parameter Name="diasLaborados" Mode="In" Type="Int32" />
+      <Parameter Name="idTurno" Mode="In" Type="Int32" />
+      <Parameter Name="horasExtras" Mode="In" Type="Decimal" />
+      <Parameter Name="SeguroSocial" Mode="In" Type="Decimal" />
+      <Parameter Name="impuestoRenta" Mode="In" Type="Decimal" />
+      <Parameter Name="Asociacion" Mode="In" Type="Decimal" />
+      <Parameter Name="otrosRebajos" Mode="In" Type="Int32" />
+      <Parameter Name="totalPago" Mode="In" Type="Decimal" />
+      <Parameter Name="Vacaciones" Mode="In" Type="Decimal" />
+      <Parameter Name="Aguinaldo" Mode="In" Type="Decimal" />
+      <Parameter Name="Cesantia" Mode="In" Type="Decimal" />
+      <Parameter Name="fechaPago" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CalculaModifica">
+      <Parameter Name="idRegistro" Mode="In" Type="Int32" />
+      <Parameter Name="idColaborador" Mode="In" Type="Int32" />
+      <Parameter Name="diasLaborados" Mode="In" Type="Int32" />
+      <Parameter Name="idTurno" Mode="In" Type="Int32" />
+      <Parameter Name="horasExtras" Mode="In" Type="Decimal" />
+      <Parameter Name="SeguroSocial" Mode="In" Type="Decimal" />
+      <Parameter Name="impuestoRenta" Mode="In" Type="Decimal" />
+      <Parameter Name="Asociacion" Mode="In" Type="Decimal" />
+      <Parameter Name="otrosRebajos" Mode="In" Type="Int32" />
+      <Parameter Name="totalPago" Mode="In" Type="Decimal" />
+      <Parameter Name="Vacaciones" Mode="In" Type="Decimal" />
+      <Parameter Name="Aguinaldo" Mode="In" Type="Decimal" />
+      <Parameter Name="Cesantia" Mode="In" Type="Decimal" />
+      <Parameter Name="fechaPago" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CalculaReserva">
+      <Parameter Name="idColaborador" Mode="In" Type="Int32" />
+      <Parameter Name="Vacaciones" Mode="In" Type="Decimal" />
+      <Parameter Name="Aguinaldo" Mode="In" Type="Decimal" />
+      <Parameter Name="Cesantia" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ColaboradorElimina">
+      <Parameter Name="idColaborador" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ColaboradorInserta">
+      <Parameter Name="cedula" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Primer_Apellido" Mode="In" Type="String" />
+      <Parameter Name="Segundo_Apellido" Mode="In" Type="String" />
+      <Parameter Name="Genero" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="direccionFisica" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="Decimal" />
+      <Parameter Name="FechaIngreso" Mode="In" Type="DateTime" />
+      <Parameter Name="SalarioBase" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ColaboradorModifica">
+      <Parameter Name="idColaborador" Mode="In" Type="Int32" />
+      <Parameter Name="cedula" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Primer_Apellido" Mode="In" Type="String" />
+      <Parameter Name="Segundo_Apellido" Mode="In" Type="String" />
+      <Parameter Name="Genero" Mode="In" Type="String" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="direccionFisica" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="Decimal" />
+      <Parameter Name="FechaIngreso" Mode="In" Type="DateTime" />
+      <Parameter Name="SalarioBase" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ColaboradorRetorna" ReturnType="Collection(PlanillasModel.sp_ColaboradorRetorna_Result)">
+      <Parameter Name="primerApellido" Mode="In" Type="String" />
+      <Parameter Name="segundoApellido" Mode="In" Type="String" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ColaboradorRetornaID" ReturnType="Collection(PlanillasModel.sp_ColaboradorRetornaID_Result)">
+      <Parameter Name="idColaborador" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(PlanillasModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(PlanillasModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RetornaEmpleado" ReturnType="Collection(PlanillasModel.sp_RetornaEmpleado_Result)" />
+    <FunctionImport Name="sp_RetornaEmpleadoSalario" ReturnType="Collection(PlanillasModel.sp_RetornaEmpleadoSalario_Result)">
+      <Parameter Name="primerApellido" Mode="In" Type="String" />
+      <Parameter Name="segundoApellido" Mode="In" Type="String" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="fechaPago" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RetornaEmpleadoSalarioID" ReturnType="Collection(PlanillasModel.sp_RetornaEmpleadoSalarioID_Result)">
+      <Parameter Name="idRegistro" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_retornaSalario" ReturnType="Collection(PlanillasModel.sp_retornaSalario_Result)">
+      <Parameter Name="idColaborador" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RetornaUsuarioCorreoPwd" ReturnType="Collection(PlanillasModel.sp_RetornaUsuarioCorreoPwd_Result)">
+      <Parameter Name="correoElectronico" Mode="In" Type="String" />
+      <Parameter Name="contrasena" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="sp_UsuarioElimina">
+      <Parameter Name="id_Usuario" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UsuarioInserta">
+      <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="correoElectronico" Mode="In" Type="String" />
+      <Parameter Name="contrasena" Mode="In" Type="String" />
+      <Parameter Name="tipoUsuario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UsuarioModifica">
+      <Parameter Name="id_Usuario" Mode="In" Type="Int32" />
+      <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="correoElectronico" Mode="In" Type="String" />
+      <Parameter Name="tipoUsuario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UsuarioRetorna" ReturnType="Collection(PlanillasModel.sp_UsuarioRetorna_Result)" />
+    <FunctionImport Name="sp_UsuarioRetornaID" ReturnType="Collection(PlanillasModel.sp_UsuarioRetornaID_Result)">
+      <Parameter Name="id_Usuario" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="RetornaTurno_Result">
+    <Property Type="Int32" Name="idTurno" Nullable="false" />
+    <Property Type="String" Name="nombreTurno" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_ColaboradorRetorna_Result">
+    <Property Type="Int32" Name="idColaborador" Nullable="false" />
+    <Property Type="Int32" Name="cedula" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="primerApellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="segundoApellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Genero" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="correoElectronico" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="direccionFisica" Nullable="false" MaxLength="200" />
+    <Property Type="Decimal" Name="telefono" Nullable="false" Precision="8" Scale="0" />
+    <Property Type="DateTime" Name="fechaIngreso" Nullable="false" />
+    <Property Type="Decimal" Name="salarioBase" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_ColaboradorRetornaID_Result">
+    <Property Type="Int32" Name="idColaborador" Nullable="false" />
+    <Property Type="Int32" Name="cedula" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="primerApellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="segundoApellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Genero" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="correoElectronico" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="direccionFisica" Nullable="false" MaxLength="200" />
+    <Property Type="Decimal" Name="telefono" Nullable="false" Precision="8" Scale="0" />
+    <Property Type="DateTime" Name="fechaIngreso" Nullable="false" />
+    <Property Type="Decimal" Name="salarioBase" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_RetornaEmpleado_Result">
+    <Property Type="Int32" Name="idColaborador" Nullable="false" />
+    <Property Type="String" Name="NombreCompleto" Nullable="false" MaxLength="62" />
+    <Property Type="Decimal" Name="salarioBase" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_RetornaEmpleadoSalario_Result">
+    <Property Type="Int32" Name="idRegistro" Nullable="false" />
+    <Property Type="Int32" Name="idColaborador" Nullable="false" />
+    <Property Type="Int32" Name="cedula" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="primerApellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="segundoApellido" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="salarioBase" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="diasLaborados" Nullable="false" />
+    <Property Type="Int32" Name="idTurno" Nullable="false" />
+    <Property Type="String" Name="nombreTurno" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="horasExtras" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SeguroSocial" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="impuestoRenta" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Asociacion" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="otrosRebajos" Nullable="false" />
+    <Property Type="Decimal" Name="totalPago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="fechaPago" Nullable="false" />
+    <Property Type="Decimal" Name="Aguinaldo" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Vacaciones" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Cesantia" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_RetornaEmpleadoSalarioID_Result">
+    <Property Type="Int32" Name="idRegistro" Nullable="false" />
+    <Property Type="Int32" Name="idColaborador" Nullable="false" />
+    <Property Type="Int32" Name="cedula" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="primerApellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="segundoApellido" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="salarioBase" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="diasLaborados" Nullable="false" />
+    <Property Type="Int32" Name="idTurno" Nullable="false" />
+    <Property Type="String" Name="nombreTurno" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="horasExtras" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SeguroSocial" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="impuestoRenta" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Asociacion" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="otrosRebajos" Nullable="false" />
+    <Property Type="Decimal" Name="totalPago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="fechaPago" Nullable="false" />
+    <Property Type="Decimal" Name="Aguinaldo" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Vacaciones" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Cesantia" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_retornaSalario_Result">
+    <Property Type="Int32" Name="idColaborador" Nullable="false" />
+    <Property Type="Decimal" Name="salarioBase" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_RetornaUsuarioCorreoPwd_Result">
+    <Property Type="Int32" Name="id_Usuario" Nullable="false" />
+    <Property Type="String" Name="nombreCompleto" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="correoElectronico" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="contrasena" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="tipoUsuario" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_UsuarioRetorna_Result">
+    <Property Type="Int32" Name="id_Usuario" Nullable="false" />
+    <Property Type="String" Name="nombreCompleto" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="correoElectronico" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="contrasena" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="tipoUsuario" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_UsuarioRetornaID_Result">
+    <Property Type="Int32" Name="id_Usuario" Nullable="false" />
+    <Property Type="String" Name="nombreCompleto" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="correoElectronico" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="contrasena" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="tipoUsuario" Nullable="false" MaxLength="100" />
+  </ComplexType>
+</Schema>
